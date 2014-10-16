@@ -1,0 +1,59 @@
+<div>
+	<h1>Item Setting</h1>
+	<%= form_for Item.new  do |f| %>
+
+	<table class ="field">
+		<tr>
+			<th><%= f.label :kind %></th>
+			<th><%= f.label :item_name %></th>
+			<th><%= f.label :initial_price %></th>
+			
+			
+		</tr>
+		<tr>
+			<td><%= f.text_field :kind %></td>
+			<td><%= f.text_field :item_name %></td>
+			<td><%= f.text_field :initial_price %></td>
+			
+		    <td class="form-actions">
+		    	<%= f.submit "Create", :disable_with => "Submiting...", :class => "btn btn-primary" %></td>
+		</tr>
+
+		
+		
+	</table>
+	<% end %>
+</div>
+
+
+<div class="span12">
+	
+
+	<table class="table", width=800px>
+		<thead>
+		<tr>
+			<th>種類</th>
+			<th>名稱</th>
+			<th>初始值</th>
+			
+			
+		</tr>
+		</thead>
+
+		 <tbody align="center">
+			 <% @items.each do |item| %>
+			 <tr>
+			 
+				 <td> <%= item.kind %> </td>
+				 <td> <%= item.item_name %> </td>
+				 <td> <%= item.initial_price %> </td>
+				 
+
+				 <td> <%= link_to "Edit", edit_item_path(item), :class => "btn btn-mini" %>
+				 	  <%= link_to "Delete", item_path(item), method: :delete, :class => "btn btn-mini", data: {confirm: "Are you sure?" }  %>
+			 </td>
+			 </tr>
+			 <% end %>
+		 </tbody>
+	</table>
+</div>

@@ -1,0 +1,37 @@
+<h1>Editing the cashflow</h1>
+<%= form_for @cashflow, :url => {:controller => "cashflows", :action => "update", :id => @cashflow } do |f| %>
+
+<div class ="field">
+	<%= f.label :date %><br />
+	<%= f.text_field :date %>
+</div>
+
+<div class ="field">
+	<%= f.label :from_item %><br />
+	<%= f.text_field :from_item %>
+</div>
+
+<div class ="field">
+	<%= f.label :to_item %><br />
+	<%= f.text_field :to_item %>
+</div>
+
+<div class ="field">
+	<%= f.label :price%><br />
+	<%= f.text_field :price %>
+</div>
+
+<div class ="field">
+	<%= f.label :description %><br />
+	<%= f.text_field :description %>
+</div>
+
+<div class="form-actions">
+	<%= f.submit "Submit", :disable_with => "Submiting...", :class => "btn btn-primary" %>
+</div>
+
+<% end %>
+
+<p><%= link_to 'Back', cashflows_path %></p>
+
+

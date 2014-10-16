@@ -1,0 +1,103 @@
+<div>
+	<h1>Add a new cal</h1>
+	<%= form_for Cal.new  do |f| %>
+
+	<table class ="field">
+		<tr>
+			<th><%= f.label :date %></th>
+			<th><%= f.label :from %></th>
+			<th><%= f.label :to %></th>
+			<th><%= f.label :price %></th>
+			<th><%= f.label :where_to_buy %></th>
+			<th><%= f.label :description %></th>
+			<th><%= f.label :initial_value %></th>
+			<th><%= f.label :from_value %></th>
+			<th><%= f.label :to_value %></th>			
+			<th><%= f.label :final_value %></th>
+		</tr>
+		<tr>
+			<td><%= f.date_field :date %></td>
+			<td><%= select_tag(:from, options_for_select([['Asset', 1], ['Liability', 2], ['Income', 3]],1)) %></td>
+			<td><%= select_tag(:to, options_for_select([['Asset', 1], ['Liability', 2], ['Expense', 4]],4)) %></td>
+			<td><%= f.text_field :price %></td>
+			<td><%= f.text_field :where_to_buy %></td>
+			<td><%= f.text_field :description %></td>
+			<td><%= f.text_field :initial_value %></td>
+			<td><%= f.text_field :from_value %></td>
+			<td><%= f.text_field :to_value %></td>			
+			<td><%= f.text_field :final_value %></td>
+			<td class="form-actions">
+		    	<%= f.submit "Create", :disable_with => "Submiting...", :class => "btn btn-primary" %></td>
+		</tr>
+
+		
+		
+	</table>
+	<% end %>
+</div>
+</br></br></br></br></br></br></br></br>
+
+
+
+<div class="span12">
+	
+
+	<table class="table", width=800px>
+		<thead>
+		<tr>
+			<th>Date</th>
+			<th>From</th>
+			<th>To</th>
+			<th>Price</th>
+			<th>Where to buy</th>
+			<th>Description</th>
+			<th>Initial_value</th>
+			<th>From_value</th>
+			<th>To_value</th>
+			<th>Final_value</th>
+			
+		</tr>
+		</thead>
+
+		 <tbody align="center">
+			 <% @cals.each do |cal| %>
+			 <tr>
+			 
+				 <td> <%= cal.date %> </td>
+				 <td> <%= cal.from %> </td>
+				 <td> <%= cal.to %> </td>
+				 <td> <%= cal.price %> </td>
+				 <td> <%= cal.where_to_buy %> </td>
+				 <td> <%= cal.description %> </td>
+				      				 
+				 <td> <%= cal.initial_value %> </td>
+				 				   	 
+				 <td> <%= cal.from_value %> </td>
+									
+				 <td> <%= cal.to_value %> </td>
+								  
+				 <td> <%= cal.final_value %> </td>
+
+				 <td> <%= link_to "Edit", edit_cal_path(cal), :class => "btn btn-mini" %>
+				 	  <%= link_to "Delete", cal_path(cal), method: :delete, :class => "btn btn-mini", data: {confirm: "Are you sure?" }  %>
+			 </td>
+			 </tr>
+			 <% end %>
+		 </tbody>
+	</table>
+</div>
+</br></br></br></br></br>
+<p> Total price:  <%= Cal.sum(:price) %> </p>
+
+
+ <input id="person_name" name="person[name]" type="text" value="Henry"/>
+<%= text_field(:person, :name) %>
+Star
+<%= "Star" %>
+
+
+<%= def h(name)
+		puts "Hello #{name}!"
+	end
+	h("TT") %>
+

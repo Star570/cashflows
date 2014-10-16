@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  
+ 
+  <%= csrf_meta_tag %>
+
+  <%= stylesheet_link_tag "application" %>
+  
+  <%= yield :stylesheets %>
+
+  
+</head>
+
+
+
+
+
+  <div class="container">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+      
+
+      <div class="content">
+        <div class="row">
+          <%= yield %>
+          <%= yield (:sidebar) %>
+        </div> 
+    
+      </div>
+
+     
+  </div>
+
+
+  
+  
+
+  
+  <%= javascript_include_tag "application" %>
+
+  <%= yield :javascripts %>
+
+  
+
+</body>
+</html>
+

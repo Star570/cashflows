@@ -1,0 +1,17 @@
+<div class="span12">
+
+	<div class="cashflow">
+		<%= link_to("Edit", edit_cashflow_path(@cashflow) , :class => "btn btn-mini btn-pri\
+		mary pull-right" ) %>
+	</div>
+	<tr>
+		<td><p> Date: <br /><%= @cashflow.date %> </p></td>
+		<td><p> From_item: <br /> <%= @cashflow.from_item %> </p></td>
+		<td><p> To_iterm: <br /> <%= @cashflow.to_item %> </p></td>
+		<td><p> Price: <br /> <%= @cashflow.price %> </p></td>
+		<td><p> Descriiption: <br /> <%= @cashflow.description %> </p></td>
+	</tr>
+</div>
+
+<p><%= link_to 'Back', cashflows_path %></p>
+

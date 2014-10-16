@@ -1,0 +1,26 @@
+<h1>Editing the cashflow</h1>
+<%= form_for @item, :url => {:controller => "items", :action => "update", :id => @item } do |f| %>
+<div class ="field">
+	<table>
+        <thead>
+		<tr>
+			<th>種類</th>
+			<th>名稱</th>
+			<th>初始值</th>
+		</tr>
+		</thead>
+
+		<tbody align="center">
+			
+			<tr>			 
+			  <td><%= f.text_field :kind %></td>
+			  <td><%= f.text_field :item_name %></td>
+			  <td><%= f.text_field :initial_price %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+
+
+
+<p><%= link_to 'Back', items_path %></p>

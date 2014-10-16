@@ -1,0 +1,24 @@
+<h1>Add a new cashflow</h1>
+<%= form_for @cashflow do |f| %>
+
+<table class ="field">
+	<tr>
+		<th><%= f.label :date %></th>
+		<th><%= f.label :from_item %></th>
+		<th><%= f.label :to_item %></th>
+		<th><%= f.label :price %></th>
+		<th><%= f.label :description %></th>
+	</tr>
+	<tr>
+		<td><%= f.date_field :date %></td>
+		<td><%= f.text_field :from_item %></td>
+		<td><%= f.text_field :to_item %></td>
+		<td><%= f.text_field :price %></td>
+		<td><%= f.text_field :description %></td>
+		<td class="form-actions">
+	    	<%= f.submit "Create", :disable_with => "Submiting...", :class => "btn btn-primary" %></td>
+	</tr>
+</table>
+
+<% end %>
+
